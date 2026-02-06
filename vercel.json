@@ -7,16 +7,25 @@
       "config": {
         "distDir": "dist"
       }
+    },
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "https://your-backend-url.com/api/$1"
+      "dest": "/api/index.js"
     },
     {
       "src": "/(.*)",
       "dest": "/frontend/$1"
     }
-  ]
+  ],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "SESSION_SECRET": "@session_secret",
+    "FRONTEND_URL": "@frontend_url"
+  }
 }
