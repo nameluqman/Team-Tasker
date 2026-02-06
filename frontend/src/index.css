@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-purple-50 via-pink-50 via-blue-50 to-indigo-50 text-slate-900;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 text-white hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 focus:ring-purple-500 shadow-xl hover:shadow-2xl transform hover:scale-105 hover:rotate-1;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-yellow-100 via-orange-100 to-pink-100 text-slate-700 border border-yellow-300 hover:from-yellow-200 hover:via-orange-200 hover:to-pink-200 focus:ring-purple-500 shadow-lg hover:shadow-xl transform hover:scale-105 hover:rotate-1;
+  }
+  
+  .btn-danger {
+    @apply bg-gradient-to-r from-red-500 via-rose-600 to-pink-600 text-white hover:from-red-600 hover:via-rose-700 hover:to-pink-700 focus:ring-red-500 shadow-xl hover:shadow-2xl transform hover:scale-105 hover:rotate-1;
+  }
+  
+  .input {
+    @apply w-full px-3 py-2 text-sm border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-gradient-to-r from-purple-50/90 to-pink-50/90 backdrop-blur-sm text-slate-900 placeholder-purple-400 shadow-md hover:shadow-lg transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-gradient-to-br from-purple-50/95 via-pink-50/90 to-blue-50/90 backdrop-blur-sm rounded-xl shadow-lg border border-purple-200/60 hover:shadow-2xl transition-all duration-300 hover:scale-105;
+  }
+  
+  .modal-overlay {
+    @apply fixed inset-0 bg-gradient-to-br from-purple-900/60 via-pink-900/50 to-blue-900/60 backdrop-blur-md flex items-center justify-center z-50;
+  }
+  
+  .modal {
+    @apply bg-gradient-to-br from-purple-50/95 via-pink-50/90 to-blue-50/90 backdrop-blur-lg rounded-xl shadow-2xl max-w-md w-full mx-4 max-h-screen overflow-y-auto border border-purple-300/60;
+  }
+  
+  .glass-card {
+    @apply bg-gradient-to-br from-purple-50/80 via-pink-50/70 to-blue-50/70 backdrop-blur-md rounded-xl border border-purple-200/40 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105;
+  }
+  
+  .neon-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 via-blue-600 to-indigo-600;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 transform hover:scale-105 hover:rotate-1;
+  }
+  
+  .fluid-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .fluid-grid {
+    @apply grid gap-4;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .fluid-text-xs {
+    font-size: clamp(0.75rem, 0.875rem, 1rem);
+  }
+  
+  .fluid-text-sm {
+    font-size: clamp(0.875rem, 1rem, 1.125rem);
+  }
+  
+  .fluid-text-base {
+    font-size: clamp(1rem, 1.125rem, 1.25rem);
+  }
+  
+  .fluid-text-lg {
+    font-size: clamp(1.125rem, 1.25rem, 1.5rem);
+  }
+  
+  .fluid-text-xl {
+    font-size: clamp(1.25rem, 1.5rem, 1.75rem);
+  }
+  
+  .fluid-text-2xl {
+    font-size: clamp(1.5rem, 1.75rem, 2rem);
+  }
+  
+  .fluid-text-3xl {
+    font-size: clamp(1.875rem, 2.25rem, 2.5rem);
+  }
+  
+  .fluid-text-4xl {
+    font-size: clamp(2.25rem, 2.5rem, 3rem);
+  }
+  
+  .fluid-spacing-xs {
+    padding: clamp(0.5rem, 0.75rem, 1rem);
+  }
+  
+  .fluid-spacing-sm {
+    padding: clamp(0.75rem, 1rem, 1.25rem);
+  }
+  
+  .fluid-spacing-md {
+    padding: clamp(1rem, 1.25rem, 1.5rem);
+  }
+  
+  .fluid-spacing-lg {
+    padding: clamp(1.25rem, 1.5rem, 2rem);
+  }
+  
+  .fluid-spacing-xl {
+    padding: clamp(1.5rem, 2rem, 2.5rem);
+  }
+  
+  .fluid-gap-xs {
+    gap: clamp(0.5rem, 0.75rem, 1rem);
+  }
+  
+  .fluid-gap-sm {
+    gap: clamp(0.75rem, 1rem, 1.25rem);
+  }
+  
+  .fluid-gap-md {
+    gap: clamp(1rem, 1.25rem, 1.5rem);
+  }
+  
+  .fluid-gap-lg {
+    gap: clamp(1.25rem, 1.5rem, 2rem);
+  }
+  
+  .fluid-gap-xl {
+    gap: clamp(1.5rem, 2rem, 2.5rem);
+  }
+  
+  /* Responsive grid adjustments */
+  @media (min-width: 1920px) {
+    .fluid-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .fluid-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .fluid-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* Ultra colorful custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(135deg, #fce7f3, #e9d5ff, #ddd6fe, #fce7f3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #a855f7, #ec4899, #3b82f6, #6366f1);
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #9333ea, #db2777, #2563eb, #4f46e5);
+}
+
+::-webkit-scrollbar-corner {
+  background: linear-gradient(135deg, #fce7f3, #e9d5ff);
+}

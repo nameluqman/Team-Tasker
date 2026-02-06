@@ -1,0 +1,156 @@
+# 🎨 TeamTasker Git Ignore Configuration
+# ================================================
+
+# 📦 Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 🔐 Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 🏗️ Build Outputs
+/frontend/dist/
+/frontend/build/
+/backend/dist/
+/backend/build/
+
+# 📝 Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# 🚀 Runtime Data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# 🧪 Coverage & Testing
+coverage/
+*.lcov
+.nyc_output
+.c8_output
+
+# 💾 Cache Directories
+.cache
+.parcel-cache
+.eslintcache
+.stylelintcache
+.npm
+.yarn/cache
+.pnpm-store
+
+# 📦 Package Files
+*.tgz
+*.tar.gz
+.yarn-integrity
+
+# 🌐 Framework Specific
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+
+# 🔧 Development Tools
+.tern-port
+.vscode-test/
+.tsbuildinfo
+
+# 💻 IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 🖥️ Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 📄 Temporary Files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# 🐳 Docker
+.dockerignore
+docker-compose.override.yml
+
+# 🔒 Security
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# 📊 Analytics & Monitoring
+.sentry-cli
+.firebase/
+
+# 🎯 TeamTasker Specific
+/database-backups/
+*.sql.dump
+*.sqlite
+*.sqlite3
+*.db
+
+# 🌍 Environment Specific
+.env.staging
+.env.qa
+.env.production.backup
+
+# 📱 Mobile Specific (if any)
+ios/
+android/
+*.apk
+*.ipa
+
+# 🚀 Deployment Specific
+.vercel/
+.netlify/
+.aws/
+.azure/
+
+# 📚 Documentation Build
+docs/_build/
+docs/.vitepress/dist/
+
+# 🎨 Custom Tool Outputs
+.turbo/
+.pnpm-debug.log*
+
+# 🔍 Search & Indexing
+*.idx
+*.code-search
+
+# 🌐 Local Development
+.local
+.localstorage
+.session
+
+# 📊 Performance & Profiling
+.cpuprofile
+*.heapsnapshot
+speed-measure-plugin.json
+
+# 🎯 End of TeamTasker Git Ignore Configuration
