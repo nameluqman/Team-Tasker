@@ -85,9 +85,13 @@ router.post('/login', loginValidation, (req, res, next) => {
     }
 
     req.login(user, (err) => {
+      console.log('Login callback - err:', err);
+      console.log('Login callback - user:', user);
+      console.log('Login callback - session before:', req.session);
       if (err) {
         return res.status(500).json({ error: 'Login failed' });
       }
+      console.log('Login callback - session after:', req.session);
       res.json({ 
         message: 'Login successful',
         user: {
@@ -118,6 +122,9 @@ router.post('/logout', (req, res) => {
 
 // Get current user
 router.get('/me', isAuthenticated, (req, res) => {
+  console.log('Auth /me endpoint called');
+  console.log('Session:', req.session);
+  console.log('User:', req.user);
   res.json({
     user: {
       id: req.user.id,
