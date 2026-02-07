@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const session = require('express-session');
 const PgSession = require('connect-pg-simple')(session);
 const passport = require('passport');
+const path = require('path');
 require('dotenv').config({ path: '../.env' });
 
 const authRoutes = require('./routes/auth');
@@ -143,10 +144,12 @@ app.use('/api/teams', teamRoutes);
 app.use('/api/tasks', taskRoutes);
 log('✅ All API routes registered', 'green');
 
-// 404 handler
-app.use('*', (req, res) => {
-  log(`❌ Route not found: ${req.method} ${req.path}`, 'red');
-  res.status(404).json({ error: 'Route not found' });
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// Serve React app for all non-API routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });
 
 // Global error handler with enhanced logging
