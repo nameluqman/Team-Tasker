@@ -164,17 +164,15 @@ app.use((err, req, res, next) => {
 // Export for Vercel serverless
 module.exports = app;
 
-// Start server for local development
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 3001;
-  
-  app.listen(PORT, () => {
-    log('🎉 Server started successfully!', 'green');
-    log('═══════════════════════════════════════════════════════════════', 'green');
-    log(`🚀 Server running on: ${colors.cyan}http://localhost:${PORT}${colors.reset}`, 'cyan');
-    log(`📊 Health check: ${colors.cyan}http://localhost:${PORT}/api/health${colors.reset}`, 'cyan');
-    log(`🌐 API Base URL: ${colors.cyan}http://localhost:${PORT}/api${colors.reset}`, 'cyan');
-    log('═══════════════════════════════════════════════════════════════', 'green');
-    log('🎯 Ready to accept connections!', 'green');
-  });
-}
+// Start server
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  log(' Server started successfully!', 'green');
+  log('═══════════════════════════════════════════════════════════════', 'green');
+  log(` Server running on: ${colors.cyan}http://localhost:${PORT}${colors.reset}`, 'cyan');
+  log(` Health check: ${colors.cyan}http://localhost:${PORT}/api/health${colors.reset}`, 'cyan');
+  log(` API Base URL: ${colors.cyan}http://localhost:${PORT}/api${colors.reset}`, 'cyan');
+  log('═══════════════════════════════════════════════════════════════', 'green');
+  log(' Ready to accept connections!', 'green');
+});
